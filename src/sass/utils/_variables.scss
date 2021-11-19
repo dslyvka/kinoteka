@@ -13,3 +13,13 @@ $secondary-text-color: #545454;
 $main-font: 'Roboto', sans-serif;
 $main-font-size: 12px;
 $secondary-font-size: 14px;
+
+// min-width
+$mobileContainer: 320px;
+$tabletContainer: 768px;
+$desktopContainer: 1024px;
+
+// breakpoints
+$mobileBreakpoint: 767.9px;
+$tabletBreakpoint: 768px;
+$desktopBreakpoint: 1024px;
