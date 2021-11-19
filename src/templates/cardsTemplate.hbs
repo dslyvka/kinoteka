@@ -11,7 +11,12 @@
             alt="{{title}}" title="{{title}}" data-id="{{id}}" />
         {{/if}}
         <div class="card__wrap">
-            <h2 class="card__title">{{original_title}}</h2>          
+        {{#if original_title}}
+        <h2 class='card__title'>{{original_title}}</h2>
+        {{/if}}
+        {{#if name}}
+        <h2 class="card__title" data-id="{{id}}">{{name}}</h2>
+        {{/if}}
             <div class="card__info">
                 <ul class="">
                     {{#if genres}}
@@ -21,9 +26,11 @@
                     {{else}}<li class="">N/A</li>
                     {{/if}}
 
+                    {{#if first_air_date}}
+                    <p class="">| {{first_air_date}}</p>
+                    {{/if}}
                     {{#if release_date}}
-                    <p class="">| {{year}}</p>
-                    {{else}}<p class="">| </p>
+                    <p class="">| {{release_date}}</p>
                     {{/if}}
                     <p class="">{{vote_average}}</p>
                 </ul>
