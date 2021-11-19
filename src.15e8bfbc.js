@@ -10,7 +10,9 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 "use strict";function e(){return fetch("https://api.themoviedb.org/3/trending/all/day?api_key=6a2ef13a57616b6abb93fc4394172b01").then(e=>e.json()).then(e=>e.results)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
 },{}],"kjQR":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=o(require("../templates/cardsTemplate.hbs")),t=o(require("./fetchPopularMovies")),r=require("./renderPopularMovies");function o(e){return e&&e.__esModule?e:{default:e}}Object.keys(r).forEach(function(e){"default"!==e&&"__esModule"!==e&&(e in exports&&exports[e]===r[e]||Object.defineProperty(exports,e,{enumerable:!0,get:function(){return r[e]}}))});const n=document.querySelector(".collection");function u(){(0,t.default)().then(t=>{n.insertAdjacentHTML("beforeend",(0,e.default)(t))})}window.addEventListener("load",u);
-},{"../templates/cardsTemplate.hbs":"cgCf","./fetchPopularMovies":"gyxV","./renderPopularMovies":"kjQR"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/renderPopularMovies");
-},{"./sass/main.scss":"clu1","./js/renderPopularMovies":"kjQR"}]},{},["Focm"], null)
-//# sourceMappingURL=/kinoteka/src.d86a0c5f.js.map
+},{"../templates/cardsTemplate.hbs":"cgCf","./fetchPopularMovies":"gyxV","./renderPopularMovies":"kjQR"}],"Z8yx":[function(require,module,exports) {
+
+},{}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss"),require("./js/renderPopularMovies"),require("./js/watchedMovies");
+},{"./sass/main.scss":"clu1","./js/renderPopularMovies":"kjQR","./js/watchedMovies":"Z8yx"}]},{},["Focm"], null)
+//# sourceMappingURL=/kinoteka/src.15e8bfbc.js.map
