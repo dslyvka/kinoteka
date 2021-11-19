@@ -13,4 +13,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./cardsTemplate.hbs":"gqgc","./fetchPopularMovies":"gyxV","./renderPopularMovies":"kjQR"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/renderPopularMovies");
 },{"./sass/main.scss":"clu1","./js/renderPopularMovies":"kjQR"}]},{},["Focm"], null)
-//# sourceMappingURL=/kinoteka/src.a854f98e.js.map
+//# sourceMappingURL=/kinoteka/src.4a222f57.js.map
