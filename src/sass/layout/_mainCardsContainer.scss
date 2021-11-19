@@ -1,0 +1,27 @@
+.collection {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: -15px;
+
+  &__item {
+    @media screen and (max-width: 767px) {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      margin: 15px;
+      flex-basis: calc((100% - 2 * 30px) / 2);
+    }
+    @media screen and (min-width: 1280px) {
+      flex-basis: calc((100% - 3 * 30px) / 3);}
+  }
+}
+}
+
+  
