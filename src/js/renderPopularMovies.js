@@ -1,4 +1,4 @@
-import cardsTemplate from './cardsTemplate.hbs';
+import cardsTemplate from '../templates/cardsTemplate.hbs';
 import fetchPopMovies from './fetchPopularMovies';
 
 const container = document.querySelector('.collection');
