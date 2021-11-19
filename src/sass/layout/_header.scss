@@ -1,0 +1,75 @@
+.header {
+	background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+	
+	&__container {
+		display: flex;
+    flex-direction: column;
+    justify-content: start;
+    min-height: 230px;
+		padding: 46px 20px 0 20px;
+    margin: 0px auto;
+
+		@media screen and (min-width: 768px){
+			padding: 48px 75px 0 75px;
+		}
+	}
+
+	&__bg-home {
+		background-image: linear-gradient(
+			rgba(0, 0, 0, 0.56),
+			rgba(0, 0, 0, 0.56)
+		),
+		url('/images/header-home_mob_1x.jpg');
+
+		@media screen and (min-device-pixel-ratio: 2),
+     screen and (min-resolution: 192dpi),
+     screen and (min-resolution: 2dppx),
+     screen and (min-width: 320px) {
+     background-image: linear-gradient(
+			rgba(0, 0, 0, 0.56),
+			rgba(0, 0, 0, 0.56)
+		),
+       url('/images/header-home_mob_2x.jpg');
+   }
+
+	  @media screen and (min-width: 768px) {
+     background-image: linear-gradient(
+			rgba(0, 0, 0, 0.56),
+			rgba(0, 0, 0, 0.56)
+			),	
+       url('/images/header-home_tab_1x.jpg');
+ 
+     @media screen and (min-device-pixel-ratio: 2),
+       screen and (min-resolution: 192dpi),
+       screen and (min-resolution: 2dppx),
+       screen and (min-width: 768px) {
+       background-image: linear-gradient(
+			rgba(0, 0, 0, 0.56),
+			rgba(0, 0, 0, 0.56)
+			),	
+       url('/images/header-home_tab_2x.jpg');
+     }
+   }
+
+	 	@media screen and (min-width: 1024px) {
+     background-image: linear-gradient(
+			rgba(0, 0, 0, 0.56),
+			rgba(0, 0, 0, 0.56)
+			),	
+       url('/images/header-home_desk_1x.jpg');
+ 
+     @media screen and (min-device-pixel-ratio: 2),
+       screen and (min-resolution: 192dpi),
+       screen and (min-resolution: 2dppx),
+       screen and (min-width: 1024px) {
+       background-image: linear-gradient(
+			rgba(0, 0, 0, 0.56),
+			rgba(0, 0, 0, 0.56)
+			),	
+       url('/images/header-home_desk_2x.jpg');
+     }
+   }
+	}
+}
