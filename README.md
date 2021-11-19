@@ -1,4 +1,4 @@
-# Parcel boilerplate
+npx browserslist@latest --update-db# Parcel boilerplate
 
 ## Скрытые файлы
 
