@@ -5,7 +5,7 @@ const container = document.querySelector('.collection');
 
 window.addEventListener('load', renderPopularMovies);
 
-async function renderPopularMovies() {
+export default async function renderPopularMovies() {
   let [movies, genres] = await fetchPopMovies();
   movies.forEach(movie => {
     movie['genres'] = [];
