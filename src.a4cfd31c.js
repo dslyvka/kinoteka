@@ -20,4 +20,4 @@ var t;!function(e,n){"object"==typeof exports&&"object"==typeof module?module.ex
 },{"tui-pagination":"jPMh"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/renderPopularMovies"),require("./js/watchedMovies");var e=require("./js/pagination");(0,e.createPagination)();
 },{"./sass/main.scss":"clu1","./js/renderPopularMovies":"kjQR","./js/watchedMovies":"Z8yx","./js/pagination":"o8lo"}]},{},["Focm"], null)
-//# sourceMappingURL=/kinoteka/src.54d48c80.js.map
+//# sourceMappingURL=/kinoteka/src.a4cfd31c.js.map
