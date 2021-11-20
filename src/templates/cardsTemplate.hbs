@@ -25,12 +25,8 @@
                     {{/each}}
                     {{else}}<li class="">N/A</li>
                     {{/if}}
-
-                    {{#if first_air_date}}
-                    <p class="">| {{first_air_date}}</p>
-                    {{/if}}
-                    {{#if release_date}}
-                    <p class="">| {{release_date}}</p>
+                    {{#if year}}
+                    <p class="">| {{year}}</p>
                     {{/if}}
                     <p class="">{{vote_average}}</p>
                 </ul>
