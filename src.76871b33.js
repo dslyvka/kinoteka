@@ -18,8 +18,8 @@ var t;!function(e,n){"object"==typeof exports&&"object"==typeof module?module.ex
 },{}],"o8lo":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.createPagination=a;var e=t(require("tui-pagination"));function t(e){return e&&e.__esModule?e:{default:e}}const i=20;function a(){const t={itemsPerPage:i,visiblePages:5,page:1,centerAlign:!0,firstItemClassName:"tui-first-child",lastItemClassName:"tui-last-child",usageStatistics:!1},a=document.getElementById("tui-pagination-container");window.pagination=new e.default(a,t)}
 },{"tui-pagination":"jPMh"}],"yz68":[function(require,module,exports) {
-"use strict";var e=t(require("./renderPopularMovies.js"));function t(e){return e&&e.__esModule?e:{default:e}}const o={logoBtn:document.querySelector(".js-button__logo"),homeBtn:document.querySelector(".js-button__home")};o.logoBtn.addEventListener("click",e.default),o.homeBtn.addEventListener("click",e.default);
-},{"./renderPopularMovies.js":"kjQR"}],"Focm":[function(require,module,exports) {
+const o={logoBtn:document.querySelector(".js-button__logo"),homeBtn:document.querySelector(".js-button__home")};function t(){window.location.reload()}o.logoBtn.addEventListener("click",t),o.homeBtn.addEventListener("click",t);
+},{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/renderPopularMovies"),require("./js/watchedMovies");var e=require("./js/pagination");require("./js/onHomeRendering"),(0,e.createPagination)();
 },{"./sass/main.scss":"clu1","./js/renderPopularMovies":"kjQR","./js/watchedMovies":"Z8yx","./js/pagination":"o8lo","./js/onHomeRendering":"yz68"}]},{},["Focm"], null)
-//# sourceMappingURL=/kinoteka/src.c4624276.js.map
+//# sourceMappingURL=/kinoteka/src.76871b33.js.map
