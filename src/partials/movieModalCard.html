@@ -4,8 +4,13 @@
 <div class="backdrop hidden">
   <div class="modal">
     <!-- Тут будет кнопка закрытия модального окна -->
-    <button type="button" class="close-btn"></button>
-
-    <!-- Тут будет информация о кинофильме -->
+    <button type="button" class="modal__button-close">
+      <svg class="modal__icon-close">
+        <use href="./images/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
   </div>
+
+  <!-- Тут будет информация о кинофильме -->
+  <div class="modal__card"></div>
 </div>

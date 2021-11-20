@@ -1,9 +1,59 @@
 {{! Шаблон полной информацией о кинофильме }}
 
-{{! В процессе 
-(https://developers.themoviedb.org/3/movies/get-movie-details пишет ошибку 503
-API KEY 6a2ef13a57616b6abb93fc4394172b01
-}}
-<div class='modal-card'>
+<div class='template__modal-card'>
 
+  {{! Изображение кинофильма }}
+  <div class='modal-card__poster'>
+    {{#if poster_path}}
+      <img
+        class='main-img'
+        src='https://www.themoviedb.org/t/p/w500{{poster_path}}'
+        alt='{{title}}'
+        title='{{title}}'
+      />
+    {{/if}}
+  </div>
+
+  {{! Информация о кинофильме }}
+  <div class='modal-card__info'>
+    <h2 class='modal-card__title'>{{title}}</h2>
+    <ul>
+      <li>
+        <p class='modal-card__item'>Vote / Votes
+          <span class='modal-card__item--vote'>{{vote_average}}</span>/
+          <span class='modal-card__item--votes'>{{vote_count}}</span>
+        </p>
+      </li>
+      <li>
+        <p class='modal-card__item'>Popularity
+          <span class='modal-card__item--popular'>{{popularity}}</span>
+        </p>
+      </li>
+      <li>
+        <p class='modal-card__item'>Original title
+          <span class='modal-card__item--original-title'>{{original_title}}</span>
+        </p>
+      </li>
+      <li>
+        <p class='modal-card__item'>Genre</p>
+        <p class='modal-card__item--genre'>
+          {{#each genres}}
+            <span>{{this.name}}</span>
+          {{/each}}
+        </p>
+      </li>
+    </ul>
+
+    {{! Описание кинофильма }}
+    <div>
+      <p class='modal-card__description'>About</p>
+      <p class='modal-card__description--text'>{{overview}}</p>
+    </div>
+
+    {{! Кнопки в модальном окне }}
+    <div class='modal-card__buttons'>
+      <button class='modal-card__button js-addWatched' type='button'>add to watched</button>
+      <button class='modal-card__button js-addQueue' type='button'>add to queue</button>
+    </div>
+  </div>
 </div>
