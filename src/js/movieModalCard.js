@@ -2,5 +2,5 @@
 
 // В процессе
 
-// пока импорт шаблона карточки
-// import movieDetails from './movieModalCardTemplate.hbs';
+// пока ссылка на импорт шаблона карточки
+import movieModalCard from '../templates/movieModalCardTemplate.hbs';
