@@ -15,6 +15,7 @@ async function renderPopularMovies() {
         genres.filter(genre => genre.id === genreId),
       );
     });
+    movie['year'] = new Date(movie['first_air_date'] || movie['release_date']).getFullYear() + '';
   });
   console.log(movies);
   container.insertAdjacentHTML('beforeend', cardsTemplate(movies));
