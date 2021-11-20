@@ -126,6 +126,12 @@ body {
   z-index: 1000;
 }
 
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .modal {
   position: absolute;
   top: 50%;
