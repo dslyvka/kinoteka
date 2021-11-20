@@ -15,4 +15,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/renderPopularMovies"),require("./js/watchedMovies");
 },{"./sass/main.scss":"clu1","./js/renderPopularMovies":"kjQR","./js/watchedMovies":"Z8yx"}]},{},["Focm"], null)
-//# sourceMappingURL=/kinoteka/src.bc25bf1c.js.map
+//# sourceMappingURL=/kinoteka/src.7c9ebec1.js.map
