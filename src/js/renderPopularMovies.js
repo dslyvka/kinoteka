@@ -1,12 +1,15 @@
 import cardsTemplate from '../templates/cardsTemplate.hbs';
 import fetchPopMovies from './fetchPopularMovies';
 
+window.addEventListener('load', function () {
+  renderPopularMovies();
+});
+
 const container = document.querySelector('.collection');
 
-window.addEventListener('load', renderPopularMovies);
-
-export default async function renderPopularMovies() {
-  let [movies, genres] = await fetchPopMovies();
+export async function renderPopularMovies(page = 1) {
+  container.innerHTML = '';
+  let [movies, genres] = await fetchPopMovies(page);
   movies.forEach(movie => {
     movie['genres'] = [];
     movie['genre_ids'].forEach(genreId => {
@@ -20,5 +23,3 @@ export default async function renderPopularMovies() {
   console.log(movies);
   container.insertAdjacentHTML('beforeend', cardsTemplate(movies));
 }
-
-export * from './renderPopularMovies';
