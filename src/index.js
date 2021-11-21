@@ -5,6 +5,7 @@ import { createPagination } from './js/pagination';
 import './js/onHomeRendering';
 import './js/movieModalCard';
 import './js/search';
+import './js/isHiddenForHeaderBtns';
 
 createPagination();
 
