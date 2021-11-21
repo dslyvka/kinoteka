@@ -2,16 +2,19 @@
     @media screen and (min-width: 768px) {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       margin: -15px;
-
-  &__item { 
+    }
+  .collection__item { 
     @media screen and (min-width: 768px) {
       margin: 15px;
-      flex-basis: calc((100% - 2 * 30px) / 2);
+      flex-basis: calc((100% - 60px) / 2);
     }
-    @media screen and (min-width: 1280px) {
-      flex-basis: calc((100% - 3 * 30px) / 3);}
+    @media screen and (min-width: 1024px) {
+      flex-basis: calc((100% - 90px) / 3);}
   }
 }
+
+.collection:after {
+  content:'';
+  flex: auto;
 }
