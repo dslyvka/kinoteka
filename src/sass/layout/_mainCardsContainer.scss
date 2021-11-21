@@ -39,6 +39,7 @@
   & > .card__img {
     border: 3px solid $color-accent;
     transition: border 200ms linear;
+    background-color: $color-accent;
     @media screen and (min-width: $desktopBreakpoint) {
       border: 5px solid $color-accent;
     }
