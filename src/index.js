@@ -8,6 +8,7 @@ import './js/search';
 import './js/isHiddenForHeaderBtns';
 import './js/footer_modal';
 import './js/loader';
+import './js/toTopBtn';
 
 createPagination();
 
