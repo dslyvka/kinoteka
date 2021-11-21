@@ -167,6 +167,7 @@
 		border: none;
 		border-bottom: 1px solid $color-main;
 		width: 280px;
+		margin-bottom: 20px;
 		color: $color-main;
 		&:hover,
 		&:focus,
@@ -179,6 +180,13 @@
 			width: 336px;
 		}
 	}
+}
+.label {
+	color:$color-warning-accent;
+	font-size: $secondary-font-size;
+	line-height: 1.14;	
+	font-weight: 400;
+	margin: 0 auto;
 }
 
 .button {
