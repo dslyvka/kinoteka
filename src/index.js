@@ -6,6 +6,8 @@ import './js/onHomeRendering';
 import './js/movieModalCard';
 import './js/search';
 import './js/isHiddenForHeaderBtns';
+import './js/footer_modal';
+import './js/loader';
 
 createPagination();
 
@@ -13,3 +15,5 @@ createPagination();
 window.pagination.on('beforeMove', event => {
   renderPopularMovies(event.page);
 });
+
+
