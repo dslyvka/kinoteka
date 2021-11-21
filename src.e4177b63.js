@@ -47,4 +47,4 @@ const e={header:document.querySelector(".header-js"),formSearch:document.querySe
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/renderPopularMovies");require("./js/watchedMovies");var r=require("./js/pagination");require("./js/onHomeRendering"),require("./js/movieModalCard"),require("./js/search"),require("./js/isHiddenForHeaderBtns"),(0,r.createPagination)(),window.pagination.on("beforeMove",r=>{(0,e.renderPopularMovies)(r.page)});
 },{"./sass/main.scss":"clu1","./js/renderPopularMovies":"kjQR","./js/watchedMovies":"Z8yx","./js/pagination":"o8lo","./js/onHomeRendering":"yz68","./js/movieModalCard":"qdaJ","./js/search":"HU2o","./js/isHiddenForHeaderBtns":"WaB4"}]},{},["Focm"], null)
-//# sourceMappingURL=/kinoteka/src.dd7c9d53.js.map
+//# sourceMappingURL=/kinoteka/src.e4177b63.js.map
