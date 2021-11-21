@@ -13,3 +13,5 @@ createPagination();
 window.pagination.on('beforeMove', event => {
   renderPopularMovies(event.page);
 });
+
+
