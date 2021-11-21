@@ -8,6 +8,7 @@
   padding-top: 29px;
   padding-bottom: 30px;
   background-color: #f7f7f7;
+  align-items: baseline;
   @media screen and (min-width: 768px) {
     height: 77px;
     display: flex;
@@ -20,6 +21,7 @@
 .footer__mobile {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .footer___first-text {
@@ -36,4 +38,15 @@
 }
 .footer_third-text--details {
   text-decoration-line: underline;
+  border: 0;
+  background-color: #f7f7f7;
+  color: $secondary-text-color;
+  &:focus,
+  &:hover {
+    color: $btn-bg-accent;
+    cursor: pointer;
+  }
+}
+.modal_footer__icon {
+  justify-content: center;
 }
