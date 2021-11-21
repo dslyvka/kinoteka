@@ -20,10 +20,8 @@
             <div class="card__info">
                 <ul class="card__genres">
                     {{#if genres}}
-                    {{#each genres}}
-                    <li class="card__genre">{{name}}</li>
-                    {{/each}}
-                    {{else}}<li class="">N/A</li>
+                    <li class="card__genre">{{genres}}</li>
+                    {{else}}<li class="card__genre">N/A</li>
                     {{/if}}
                     {{#if year}}
                     <p class="card__text">| {{year}}</p>
