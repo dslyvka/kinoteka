@@ -13,11 +13,12 @@ export async function renderPopularMovies(page = 1) {
   movies.forEach(movie => {
     movie['genres'] = [];
     movie['genre_ids'].forEach(genreId => {
-      Array.prototype.push.apply(
-        movie['genres'],
-        genres.filter(genre => genre.id === genreId),
-      );
+      let resolvedGenre = genres.find(genre => genre.id === genreId);
+      if (resolvedGenre) {
+        movie['genres'].push(resolvedGenre.name);
+      }
     });
+    movie['genres'] = movie['genres'].join(', ');
     movie['year'] = new Date(movie['first_air_date'] || movie['release_date']).getFullYear() + '';
   });
   console.log(movies);
