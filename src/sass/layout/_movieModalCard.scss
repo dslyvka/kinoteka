@@ -3,22 +3,25 @@
 // В процессе
 
 .template__position {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%) scale(1);
   background-color: $color-main;
-  height: 95%;
   width: 280px;
-  padding: 10px;
+  padding: 48px 20px 31px;
   @media screen and (min-width: 768px) {
-    padding: 30px;
+    padding: 42px 30px 40px;
     width: 618px;
   }
   @media screen and (min-width: 1024px) {
+    padding: 50px 30px 40px;
     width: 882px;
   }
+}
+
+.nosroll {
+  overflow: hidden;
 }
 
 .modal__button-close {
@@ -33,6 +36,7 @@
   height: 30px;
   border: none;
   cursor: pointer;
+  color: black;
   background-color: rgb(193, 238, 163);
   z-index: 1000;
   &:hover,
@@ -43,23 +47,8 @@
 }
 
 .template__modal-card {
-  // position: relative;
-  // top: 0;
-  // left: 0;
-  width: 280px;
-  padding-top: 48px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 41px;
-  background-color: $color-main;
-  // margin-top: 100px;
   @media screen and (min-width: $tabletContainer) {
     display: flex;
-    width: 618px;
-    margin-top: 0px;
-  }
-  @media screen and (min-width: $desktopContainer) {
-    width: 882px;
   }
 }
 
