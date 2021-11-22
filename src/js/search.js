@@ -131,7 +131,7 @@ function searchMovie(query) {
 // //         .then(data => data.json());
 // //   // console.log(a);
 // // }
-let page;
+let page = 2;
 
 // while () {
 // }
@@ -145,7 +145,6 @@ function infinityScroll() {
   if (searchValue.trim() !== '') {
     const scrollPos = document.documentElement.getBoundingClientRect();
     if (scrollPos.bottom < document.documentElement.clientHeight + 400) {
-      page = 2;
       query = `
             https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchValue}&page=${page}&include_adult=false`;
       searchMovie(query);
