@@ -53,4 +53,4 @@ const t=document.querySelector(".back_to_top");function e(){const e=window.pageY
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/renderPopularMovies");require("./js/watchedMovies");var r=require("./js/pagination");require("./js/onHomeRendering"),require("./js/movieModalCard"),require("./js/search"),require("./js/isHiddenForHeaderBtns"),require("./js/footer_modal"),require("./js/loader"),require("./js/toTopBtn"),(0,r.createPagination)(),window.pagination.on("beforeMove",r=>{(0,e.renderPopularMovies)(r.page)});
 },{"./sass/main.scss":"clu1","./js/renderPopularMovies":"kjQR","./js/watchedMovies":"Z8yx","./js/pagination":"o8lo","./js/onHomeRendering":"yz68","./js/movieModalCard":"qdaJ","./js/search":"HU2o","./js/isHiddenForHeaderBtns":"WaB4","./js/footer_modal":"jVoR","./js/loader":"vQE2","./js/toTopBtn":"mbSL"}]},{},["Focm"], null)
-//# sourceMappingURL=/kinoteka/src.52fc225f.js.map
+//# sourceMappingURL=/kinoteka/src.b372a453.js.map
