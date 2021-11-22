@@ -6,6 +6,7 @@ import { throttle } from 'lodash';
 const main = document.querySelector('.collection');
 const search = document.querySelector('.form__input');
 const searchBtn = document.querySelector('.button__submit');
+const onError = document.querySelector('.label');
 
 // const ITEMS_PER_PAGE_HOME = 20; +
 
@@ -39,7 +40,7 @@ async function fetchMovie(query) {
   ]);
   //   .then(data => console.log(data));
 
-  return Promise.all([
+  return await Promise.all([
     fetch(query).then(data => data.json()),
     fetch(
       'https://api.themoviedb.org/3/genre/movie/list?api_key=6a2ef13a57616b6abb93fc4394172b01&language=en-US',
@@ -54,7 +55,6 @@ function onEnter(e) {
   if (e.which === 13) {
     e.preventDefault();
     if (searchValue.trim() !== '') searchMovie(query);
-    
   }
 
   //   const container = document.getElementById('tui-pagination-container');
@@ -73,15 +73,21 @@ function onEnter(e) {
 function onBtnSearch(e) {
   e.preventDefault();
   if (searchValue.trim() !== '') searchMovie(query);
-  
 }
 
 function renderMovie(data, data1) {
-  if (data.total_results === 0) return;
+  if (data.total_results === 0) {
+    onError.classList.remove('visually-hidden');
+    setTimeout(() => {
+      onError.classList.add('visually-hidden');
+    }, 2000);
+    return;
+  }
   // totalItems = data.total_results; ++++
   //   console.log(totalItems);
-  if (data.page === 1) main.innerHTML = '';
-
+    if (data.page === 1) main.innerHTML = '';
+    const pag = document.querySelector('.tui-pagination');
+    pag.innerHTML = '';
   if (data.page <= data.total_pages) {
     main.insertAdjacentHTML('beforeend', cardsTemplate(data.results));
     const genres = data1.genres;
@@ -101,6 +107,12 @@ function renderMovie(data, data1) {
       if (genre.length > 1)
         genre[genre.length - 1].innerHTML = genre[genre.length - 1].innerHTML.slice(0, -1);
     });
+    }
+
+
+    window.addEventListener('scroll', handler);
+  if (data.total_results === 0) {
+    window.removeEventListener('scroll', handler);
   }
   if (data.page >= data.total_pages) {
     window.removeEventListener('scroll', handler);
@@ -108,8 +120,8 @@ function renderMovie(data, data1) {
 }
 
 function searchMovie(query) {
-    fetchMovie(query).then(data => renderMovie(...data));
-    window.addEventListener('scroll', handler);
+  fetchMovie(query).then(data => renderMovie(...data));
+//   window.addEventListener('scroll', handler);
 }
 
 // function createPaginationForSearch() { +++++++++++++++++++++
