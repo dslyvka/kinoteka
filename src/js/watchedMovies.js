@@ -17,6 +17,7 @@ export default async function addToWatched() {
     if (!watched.includes(res)) watched.unshift(res);
     console.log(res);
     console.log(watched);
+    localStorage.setItem('watched', JSON.stringify(watched));
 }
 
 
@@ -26,7 +27,5 @@ export default async function addToWatched() {
 //   .then(data => data.json())
 //   .then(console.log);
 
-// import addToWatched from './watchedMovies';
 
-    //   const a = document.querySelector('.js-addWatched');
-    //   a.addEventListener('click', addToWatched);
+
