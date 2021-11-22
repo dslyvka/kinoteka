@@ -54,7 +54,7 @@ function onEnter(e) {
   if (e.which === 13) {
     e.preventDefault();
     if (searchValue.trim() !== '') searchMovie(query);
-    window.addEventListener('scroll', handler);
+    
   }
 
   //   const container = document.getElementById('tui-pagination-container');
@@ -73,7 +73,7 @@ function onEnter(e) {
 function onBtnSearch(e) {
   e.preventDefault();
   if (searchValue.trim() !== '') searchMovie(query);
-  window.addEventListener('scroll', handler);
+  
 }
 
 function renderMovie(data, data1) {
@@ -108,7 +108,8 @@ function renderMovie(data, data1) {
 }
 
 function searchMovie(query) {
-  fetchMovie(query).then(data => renderMovie(...data));
+    fetchMovie(query).then(data => renderMovie(...data));
+    window.addEventListener('scroll', handler);
 }
 
 // function createPaginationForSearch() { +++++++++++++++++++++
