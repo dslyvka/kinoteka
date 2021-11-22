@@ -3,6 +3,7 @@
 import movieModalCard from '../templates/movieModalCardTemplate.hbs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import addToWatched from './watchedMovies';
 
 const apiKey = '6a2ef13a57616b6abb93fc4394172b01';
 
@@ -32,6 +33,10 @@ function openModal(e) {
       const modal = basicLightbox.create(markup);
 
       modal.show();
+
+        const watched = document.querySelector('.js-addWatched');
+      watched.addEventListener('click', addToWatched);
+      // localStorage.clear();
 
       noScroll.classList.add('nosroll');
 
