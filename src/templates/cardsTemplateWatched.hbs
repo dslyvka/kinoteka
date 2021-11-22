@@ -1,0 +1,36 @@
+
+<li class="collection__item">
+    <article class="card">
+          {{#if poster_path}}
+          <img class="card__img" src="https://www.themoviedb.org/t/p/w500{{poster_path}}"
+            onerror="this.onerror=null;this.src='https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg' loading="
+            lazy" alt="{{title}}" title="{{title}}" data-id="{{id}}" />
+        {{else}}
+        <img class="card__img"
+            src="https://m.media-amazon.com/images/I/61nt34iuBkL._SS500_.jpg" loading="lazy"
+            alt="{{title}}" title="{{title}}" data-id="{{id}}" />
+        {{/if}}
+        <div class="card__wrap">
+        {{#if original_title}}
+        <h2 class='card__title'>{{original_title}}</h2>
+        {{/if}}
+        {{#if name}}
+        <h2 class="card__title" data-id="{{id}}">{{name}}</h2>
+        {{/if}}
+            <div class="card__info">
+                <ul class="card__genres">
+                    {{#if genres}}
+                    {{#each genres}}
+                    <li class="card__genre">{{name}},</li>
+                    {{/each}}
+                    {{else}}<li class="card__genre">N/A</li>
+                    {{/if}}
+                    {{#if release_date}}
+                    <p class="card__text">| {{release_date}}</p>
+                    {{/if}}
+                    <p class="card__text">{{vote_average}}</p>
+                </ul>
+            </div>
+        </div>
+    </article>
+</li>
