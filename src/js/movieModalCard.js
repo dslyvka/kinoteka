@@ -7,6 +7,7 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 const apiKey = '6a2ef13a57616b6abb93fc4394172b01';
 
 const cardMovie = document.querySelector('.collection');
+const noScroll = document.querySelector('body');
 
 cardMovie.addEventListener('click', openModal);
 
@@ -32,6 +33,8 @@ function openModal(e) {
 
       modal.show();
 
+      noScroll.classList.add('nosroll');
+
       const closeButton = document.querySelector('.modal__button-close');
       closeButton.addEventListener('click', closeModal);
       window.addEventListener('keydown', closeModalHandler);
@@ -39,12 +42,14 @@ function openModal(e) {
       function closeModalHandler(e) {
         if (e.code === 'Escape') {
           modal.close(e);
+          noScroll.classList.remove('nosroll');
           window.removeEventListener('keydown', closeModalHandler);
         }
       }
 
       function closeModal(e) {
         modal.close();
+        noScroll.classList.remove('nosroll');
         window.removeEventListener('keydown', closeModalHandler);
       }
     })
