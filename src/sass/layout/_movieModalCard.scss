@@ -1,30 +1,13 @@
 // Стили модального окна с полной информацией о кинофильме
-// Перед пушем скрывать модальное
 
 // В процессе
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.25);
-  opacity: 1;
-  z-index: 1000;
-}
-
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.modal {
+.template__position {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+
+  transform: translate(-50%, -50%) scale(1);
   background-color: $color-main;
   height: 95%;
   width: 280px;
@@ -50,5 +33,147 @@
   height: 30px;
   border: none;
   cursor: pointer;
-  background-color: inherit;
+  background-color: rgb(193, 238, 163);
+  z-index: 1000;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgb(241, 127, 127);
+  }
+}
+
+.template__modal-card {
+  // position: relative;
+  // top: 0;
+  // left: 0;
+  width: 280px;
+  padding-top: 48px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 41px;
+  background-color: $color-main;
+  // margin-top: 100px;
+  @media screen and (min-width: $tabletContainer) {
+    display: flex;
+    width: 618px;
+    margin-top: 0px;
+  }
+  @media screen and (min-width: $desktopContainer) {
+    width: 882px;
+  }
+}
+
+.modal-card__img {
+  display: block;
+  object-fit: cover;
+  width: 240px;
+  height: 356px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  @media screen and (min-width: $tabletContainer) {
+    margin-right: 30px;
+    margin-bottom: 0px;
+    width: 264px;
+    height: 373px;
+  }
+  @media screen and (min-width: $desktopContainer) {
+    width: 396px;
+    height: 477px;
+  }
+}
+
+.modal-card__info {
+  font-family: $main-font;
+  font-weight: 500;
+  font-size: $main-font-size;
+}
+
+.modal-card__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.modal-card__item {
+  display: flex;
+  margin-bottom: 10px;
+  color: #8c8c8c;
+}
+.modal-card__item--span {
+  color: $primary-text-color;
+}
+
+.modal-card__item--vote {
+  display: inline-block;
+  margin-left: 41px;
+  margin-right: 6px;
+  background-color: $color-accent;
+  width: 36px;
+  border-radius: 5px;
+  color: $color-main;
+  text-align: center;
+}
+.modal-card__item--votes {
+  display: inline-block;
+  margin-left: 3px;
+  background-color: #f7f7f7;
+  width: 36px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modal-card__item--popular {
+  margin-left: 53px;
+}
+
+.modal-card__item--original-title {
+  margin-left: 41px;
+  text-transform: uppercase;
+}
+
+.modal-card__item--genre {
+  display: flex;
+}
+
+.modal-card__item--genre-list {
+  margin-left: 76px;
+}
+
+.modal-card__description {
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.modal-card__description--text {
+  margin-bottom: 21px;
+}
+
+.modal-card__buttons {
+  display: flex;
+  justify-content: left;
+}
+
+.modal-card__button {
+  width: 112px;
+  height: 44px;
+  cursor: pointer;
+  color: $primary-text-color;
+  background-color: $color-main;
+  text-transform: uppercase;
+  border: 1px solid $primary-text-color;
+  border-radius: 5px;
+  margin-right: 15px;
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+    color: $color-main;
+    background-color: $color-accent;
+  }
+  @media screen and (min-width: $tabletContainer) {
+    width: 125px;
+  }
+  @media screen and (min-width: $desktopContainer) {
+    width: 136px;
+  }
 }
