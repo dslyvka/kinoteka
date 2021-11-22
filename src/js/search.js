@@ -1,13 +1,17 @@
 import cardsTemplate from '../templates/cardsTemplateSearch.hbs';
 import { debounce } from 'lodash';
+// import { createPagination } from '../js/pagination'; +
 
 const main = document.querySelector('.collection');
 const search = document.querySelector('.form__input');
 const searchBtn = document.querySelector('.button__submit');
 
+// const ITEMS_PER_PAGE_HOME = 20; +
+
 let key;
 let searchValue;
 let query;
+// let totalItems; +
 
 search.addEventListener('input', debounce(onSearch, 50));
 search.addEventListener('keydown', onEnter);
@@ -17,7 +21,7 @@ function onSearch(e) {
   key = '6a2ef13a57616b6abb93fc4394172b01';
   searchValue = e.target.value;
   query = `
-https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchValue}&page=1&include_adult=false`;
+https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchValue}&page=${1}&include_adult=false`;
 }
 
 function fetchMovie(query) {
@@ -49,6 +53,19 @@ function onEnter(e) {
     e.preventDefault();
     if (searchValue.trim() !== '') searchMovie(query);
   }
+
+//   const container = document.getElementById('tui-pagination-container');
+//   container.innerHTML = '';
+//     // let data = fetch(`https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchValue}&page=${1}&include_adult=false`)
+//   createPagination();
+//   window.pagination.on('beforeMove', event => {
+//     query = `
+// https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchValue}&page=${event.page}&include_adult=false`;
+//     searchMovie(query);
+//     //   console.log(currentPage);
+//     //   window.pagination.reset(totalItems);
+//   }); +++++++++++++++++++++++++++++++++
+    
 }
 
 function onBtnSearch(e) {
@@ -57,7 +74,9 @@ function onBtnSearch(e) {
 }
 
 function renderMovie(data, data1) {
-  if (data.total_results === 0) return;
+    if (data.total_results === 0) return;
+    // totalItems = data.total_results; ++++
+    console.log(totalItems);
   main.innerHTML = '';
   main.insertAdjacentHTML('beforeend', cardsTemplate(data.results));
   const genres = data1.genres;
@@ -82,3 +101,24 @@ function renderMovie(data, data1) {
 function searchMovie(query) {
   fetchMovie(query).then(data => renderMovie(...data));
 }
+
+// function createPaginationForSearch() { +++++++++++++++++++++
+//   const options = {
+//     itemsPerPage: 0,
+//     visiblePages: 0,
+//     page: 1,
+//     totalItems: 0,
+//     centerAlign: true,
+//     firstItemClassName: 'tui-first-child',
+//     lastItemClassName: 'tui-last-child',
+//     usageStatistics: false,
+//   };
+//   const container = document.getElementById('tui-pagination-container');
+//   window.pagination = new Pagination(container, options);
+// }
+
+// // function totalItems() {
+// //     return fetch(query)
+// //         .then(data => data.json());
+// //   // console.log(a);
+// // }

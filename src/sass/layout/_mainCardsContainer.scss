@@ -1,17 +1,56 @@
-.collection {
-    @media screen and (min-width: 768px) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: -15px;
-
-  &__item { 
-    @media screen and (min-width: 768px) {
-      margin: 15px;
-      flex-basis: calc((100% - 2 * 30px) / 2);
-    }
-    @media screen and (min-width: 1280px) {
-      flex-basis: calc((100% - 3 * 30px) / 3);}
+.container {
+  @media screen and (min-width: 768px) {
+    padding: 0 75px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 0 70px;
   }
 }
+
+.collection {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+  .collection__item {
+    @media screen and (min-width: 768px) {
+      margin: 15px;
+      flex-basis: calc((100% - 60px) / 2);
+    }
+    @media screen and (min-width: 1024px) {
+      flex-basis: calc((100% - 90px) / 3);
+    }
+  }
+}
+
+.collection:after {
+  content: '';
+  flex: auto;
+}
+
+.collection:focus-within .card,
+.collection:hover .card {
+  transform: translateY(8%);
+}
+
+.card:focus ~ .card,
+.card:hover ~ .card {
+  transform: translateY(-8%);
+}
+
+.collection .card:focus,
+.collection .card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  z-index: 1;
+
+  & > .card__img {
+    border: 3px solid $color-accent;
+    transition: border 200ms linear;
+    background-color: $color-accent;
+    @media screen and (min-width: $desktopBreakpoint) {
+      border: 5px solid $color-accent;
+    }
+  }
 }

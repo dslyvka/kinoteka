@@ -1,45 +1,76 @@
 .card {
-    margin-left: auto;
-    margin-right: auto;
+  position: relative;
+  display: block;
+  transition: transform 200ms linear;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 767px) {
+    width: 280px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 294px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 274px;
+  }
+
+  &__img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 398px;
     @media screen and (max-width: 767px) {
-        width: 280px;
-      }
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
-        width: 294px;
-      }
-    @media screen and (min-width: 1280px) {
-        width: 274px;
-      }
-    
-    &__img {
-      border-radius: 5px;
-      margin-bottom: 10px;
-      height: 398px;
-      
+      width: 280px;
     }
-    &__title {
-      text-transform: uppercase;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      width: 294px;
     }
-    &__wrap {
-        margin-bottom: 20px;
-    }    
-    &__info {
-      display: flex;
-      flex-wrap: wrap;
-      color: $color-accent;
+    @media screen and (min-width: 1024px) {
+      width: 274px;
     }
-    &__genres {
-      display: inline-flex;
-      flex-wrap: wrap;
-    }
-    &__genre {
-      margin-right: 5px;
-    }
+  }
+  &__title {
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: $main-font-size;
+    line-height: 1.333;
+    text-transform: uppercase;
+  }
 
-    &__text {
+  &__wrap {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+  &__info {
+    color: $color-accent;
+  }
+  &__genres {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  &__genre {
     margin-right: 5px;
-    }
+  }
 
+  &__text {
+    margin-right: 5px;
+  }
 }
 
-  
+.card__vote {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  color: $color-main;
+  background-color: $color-accent;
+  border-radius: 5px;
+}
