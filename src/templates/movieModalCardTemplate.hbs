@@ -1,59 +1,69 @@
 {{! Шаблон полной информацией о кинофильме }}
 
-<div class='template__modal-card'>
-
-  {{! Изображение кинофильма }}
-  <div class='modal-card__poster'>
-    {{#if poster_path}}
-      <img
-        class='main-img'
-        src='https://www.themoviedb.org/t/p/w500{{poster_path}}'
-        alt='{{title}}'
-        title='{{title}}'
-      />
-    {{/if}}
-  </div>
-
-  {{! Информация о кинофильме }}
-  <div class='modal-card__info'>
-    <h2 class='modal-card__title'>{{title}}</h2>
-    <ul>
-      <li>
-        <p class='modal-card__item'>Vote / Votes
-          <span class='modal-card__item--vote'>{{vote_average}}</span>/
-          <span class='modal-card__item--votes'>{{vote_count}}</span>
-        </p>
-      </li>
-      <li>
-        <p class='modal-card__item'>Popularity
-          <span class='modal-card__item--popular'>{{popularity}}</span>
-        </p>
-      </li>
-      <li>
-        <p class='modal-card__item'>Original title
-          <span class='modal-card__item--original-title'>{{original_title}}</span>
-        </p>
-      </li>
-      <li>
-        <p class='modal-card__item'>Genre</p>
-        <p class='modal-card__item--genre'>
-          {{#each genres}}
-            <span>{{this.name}}</span>
-          {{/each}}
-        </p>
-      </li>
-    </ul>
-
-    {{! Описание кинофильма }}
-    <div>
-      <p class='modal-card__description'>About</p>
-      <p class='modal-card__description--text'>{{overview}}</p>
+<div class='template__position'>
+  <button type='button' class='modal__button-close'>
+    <svg class='modal__icon-close' width='18' height='18'>
+      <use href='./images/sprite.svg#icon-close'></use>
+    </svg>
+  </button>
+  <div class='template__modal-card'>
+    <div class='modal-card__poster'>
+      {{#if poster_path}}
+        <img
+          class='modal-card__img'
+          src='https://www.themoviedb.org/t/p/w500{{poster_path}}'
+          alt='{{title}}'
+          title='{{title}}'
+          data-id='{{id}}'
+        />
+      {{else}}
+        <img
+          class='modal-card__img'
+          src='https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg'
+          alt='{{title}}'
+          title='{{title}}'
+          data-id='{{id}}'
+        />
+      {{/if}}
     </div>
 
-    {{! Кнопки в модальном окне }}
-    <div class='modal-card__buttons'>
-      <button class='modal-card__button js-addWatched' type='button'>add to watched</button>
-      <button class='modal-card__button js-addQueue' type='button'>add to queue</button>
+    <div class='modal-card__info'>
+      <h2 class='modal-card__title'>{{title}}</h2>
+
+      <p class='modal-card__item'>Vote / Votes
+        <span class='modal-card__item--vote modal-card__item--span'>{{vote_average}}</span>/
+        <span class='modal-card__item--votes modal-card__item--span'>{{vote_count}}</span>
+      </p>
+
+      <p class='modal-card__item'>Popularity
+        <span class='modal-card__item--popular modal-card__item--span'>{{popularity}}</span>
+      </p>
+
+      <p class='modal-card__item'>Original title
+        <span
+          class='modal-card__item--original-title modal-card__item--span'
+        >{{original_title}}</span>
+      </p>
+
+      <div class='modal-card__item--genre'>
+        <p class='modal-card__item'>Genre
+        </p>
+        <p class='modal-card__item--genre-list modal-card__item--span'>
+          {{#each genres}}
+            <span class='modal-card__item--genre-data'>{{this.name}}</span>
+          {{/each}}
+        </p>
+      </div>
+
+      <div>
+        <p class='modal-card__description'>About</p>
+        <p class='modal-card__description--text'>{{overview}}</p>
+      </div>
+
+      <div class='modal-card__buttons'>
+        <button class='modal-card__button js-addWatched' type='button'>add to watched</button>
+        <button class='modal-card__button js-addQueue' type='button'>add to queue</button>
+      </div>
     </div>
   </div>
 </div>
