@@ -6,10 +6,16 @@ window.addEventListener('load', function () {
 });
 
 const container = document.querySelector('.collection');
+const loader = document.getElementById('loader');
 
 export async function renderPopularMovies(page = 1) {
   container.innerHTML = '';
+  // start loader
+  loader.classList.add('is-visible');
+
   let [movies, genres] = await fetchPopMovies(page);
+  // stop loader
+  loader.classList.remove('is-visible');
   movies.forEach(movie => {
     movie['genres'] = [];
     movie['genre_ids'].forEach(genreId => {
