@@ -30,3 +30,5 @@ if (watched !== null) {
 }
 
 // localStorage.clear();
+        // watched.removeEventListener('click', addToWatched); 60, 52
+        
