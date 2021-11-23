@@ -9,6 +9,7 @@ import './js/isHiddenForHeaderBtns';
 import './js/footer_modal';
 import './js/loader';
 import './js/toTopBtn';
+import './js/onMyLibClick';
 
 createPagination();
 
