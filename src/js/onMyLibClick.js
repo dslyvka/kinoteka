@@ -77,7 +77,8 @@ if (watched !== null) {
 } else {
   myLibBtn.addEventListener('click', () => {
     container.innerHTML = '';
-    const queue = document.querySelector('.button__q');
+      const queue = document.querySelector('.button__q');
+      const watchedButton = document.querySelector('.js-button-watched');
     queue.addEventListener('click', async () => {
       const watchedButton = document.querySelector('.js-button-watched');
       watchedButton.classList.remove('button__current');
