@@ -4,6 +4,7 @@ import movieModalCard from '../templates/movieModalCardTemplate.hbs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import addToWatched from './watchedMovies';
+import addToQ from './addQ';
 
 const apiKey = '6a2ef13a57616b6abb93fc4394172b01';
 
@@ -26,17 +27,19 @@ function openModal(e) {
   e.preventDefault();
 
   fetchOneMovieInfo(e.target.dataset.id)
-    .then(data => {
+    .then(async data => {
       if (e.target.nodeName !== 'IMG') return;
 
       const markup = movieModalCard(data);
       const modal = basicLightbox.create(markup);
 
-      modal.show();
+      await modal.show();
 
       const watched = document.querySelector('.js-addWatched');
       watched.addEventListener('click', addToWatched);
-      // localStorage.clear();
+
+      const q = document.querySelector('.js-addQueue');
+      q.addEventListener('click', addToQ);
 
       background.classList.add('nosroll');
 
@@ -52,6 +55,8 @@ function openModal(e) {
         closeButton.removeEventListener('click', closeModal);
         background.removeEventListener('click', closeModalUnderlay);
         window.removeEventListener('keydown', closeModalHandler);
+        watched.removeEventListener('click', addToWatched);
+        q.removeEventListener('click', addToQ);
       }
 
       function closeModalUnderlay(e) {
@@ -60,6 +65,8 @@ function openModal(e) {
         closeButton.removeEventListener('click', closeModal);
         background.removeEventListener('click', closeModalUnderlay);
         window.removeEventListener('keydown', closeModalHandler);
+        watched.removeEventListener('click', addToWatched);
+        q.removeEventListener('click', addToQ);
       }
 
       function closeModalHandler(e) {
@@ -69,6 +76,8 @@ function openModal(e) {
           closeButton.removeEventListener('click', closeModal);
           background.removeEventListener('click', closeModalUnderlay);
           window.removeEventListener('keydown', closeModalHandler);
+          watched.removeEventListener('click', addToWatched);
+          q.removeEventListener('click', addToQ);
         }
       }
     })
