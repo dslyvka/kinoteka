@@ -3,6 +3,7 @@ const watched = [];
 let myLib = document.querySelector('.collection');
 let markup = '';
 import cardTemplateWatched from '../templates/cardsTemplateWatched.hbs';
+// localStorage.setItem('watched', JSON.stringify(watched));
 
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
 

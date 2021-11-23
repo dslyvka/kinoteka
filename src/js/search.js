@@ -28,16 +28,16 @@ https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${
 }
 
 async function fetchMovie(query) {
-  // await Promise.all([
-  //   fetch(query)
-  //     .then(data => data.json())
-  //     .then(console.log),
-  //   fetch(
-  //     'https://api.themoviedb.org/3/genre/movie/list?api_key=6a2ef13a57616b6abb93fc4394172b01&language=en-US',
-  //   )
-  //     .then(data => data.json())
-  //     .then(console.log),
-  // ]);
+  await Promise.all([
+    fetch(query)
+      .then(data => data.json())
+      .then(console.log),
+    fetch(
+      'https://api.themoviedb.org/3/genre/movie/list?api_key=6a2ef13a57616b6abb93fc4394172b01&language=en-US',
+    )
+      .then(data => data.json())
+      .then(console.log),
+  ]);
   //   .then(data => console.log(data));
 
   return await Promise.all([
