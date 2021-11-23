@@ -63,4 +63,4 @@ const e=document.querySelector(".js-button__myLibrary"),n=document.querySelector
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/renderPopularMovies");require("./js/watchedMovies");var r=require("./js/pagination");require("./js/onHomeRendering"),require("./js/movieModalCard"),require("./js/search"),require("./js/isHiddenForHeaderBtns"),require("./js/footer_modal"),require("./js/loader"),require("./js/toTopBtn"),require("./js/onMyLibClick"),(0,r.createPagination)(),window.pagination.on("beforeMove",r=>{(0,e.renderPopularMovies)(r.page)});
 },{"./sass/main.scss":"clu1","./js/renderPopularMovies":"kjQR","./js/watchedMovies":"Z8yx","./js/pagination":"o8lo","./js/onHomeRendering":"yz68","./js/movieModalCard":"qdaJ","./js/search":"HU2o","./js/isHiddenForHeaderBtns":"WaB4","./js/footer_modal":"jVoR","./js/loader":"vQE2","./js/toTopBtn":"mbSL","./js/onMyLibClick":"XU95"}]},{},["Focm"], null)
-//# sourceMappingURL=/kinoteka/src.ce030e88.js.map
+//# sourceMappingURL=/kinoteka/src.33d48a03.js.map
