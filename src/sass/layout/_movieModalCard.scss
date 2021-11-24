@@ -1,27 +1,29 @@
 // Стили модального окна с полной информацией о кинофильме
 
-// В процессе
+// В процессе\
+.nosroll {
+  overflow: hidden;
+}
 
 .template__position {
-  position: fixed;
+  position: absolute;
+  overflow: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   background-color: $color-main;
   width: 280px;
+  height: 600px;
   padding: 48px 20px 31px;
   @media screen and (min-width: 768px) {
     padding: 42px 30px 40px;
     width: 618px;
+    height: auto;
   }
   @media screen and (min-width: 1024px) {
     padding: 50px 30px 40px;
     width: 882px;
   }
-}
-
-.nosroll {
-  overflow: hidden;
 }
 
 .modal__button-close {
@@ -34,15 +36,21 @@
   align-items: center;
   width: 30px;
   height: 30px;
-  border: none;
   cursor: pointer;
-  color: black;
-  background-color: rgb(193, 238, 163);
+  border: 1px solid $primary-text-color;
+  border: none;
+  border-radius: 50%;
+  text-align: center;
+  color: $primary-text-color;
+  font-size: 20px;
+  background-color: $color-main;
   z-index: 1000;
   &:hover,
   &:focus,
   &:active {
-    background-color: rgb(241, 127, 127);
+    border: none;
+    color: $color-main;
+    background-color: $btn-bg-accent;
   }
 }
 
