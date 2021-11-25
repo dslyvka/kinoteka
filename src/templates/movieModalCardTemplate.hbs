@@ -45,9 +45,14 @@
         <p class='modal-card__item'>Genre
         </p>
         <p class='modal-card__item--genre-list modal-card__item--span'>
-          {{#each genres}}
-            <span class='modal-card__item--genre-data'>{{this.name}}</span>
-          {{/each}}
+          {{#if genres}}
+            {{#each genres}}
+              <span class='modal-card__item--genre-data'>{{this.name}}{{#unless @last}},
+                {{/unless}}</span>
+            {{/each}}
+          {{else}}
+            <span class='modal-card__item--genre-data'>N/A</span>
+          {{/if}}
         </p>
       </div>
 

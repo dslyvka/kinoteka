@@ -9,7 +9,7 @@ import addToQ from './addQ';
 const apiKey = '6a2ef13a57616b6abb93fc4394172b01';
 
 const cardMovie = document.querySelector('.collection');
-const background = document.querySelector('body');
+const background = document.querySelector('.section');
 
 cardMovie.addEventListener('click', openModal);
 
