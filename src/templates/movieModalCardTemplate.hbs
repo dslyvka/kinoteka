@@ -1,11 +1,7 @@
 {{! Шаблон полной информацией о кинофильме }}
 
 <div class='template__position'>
-  <button type='button' class='modal__button-close'>
-    <svg class='modal__icon-close' width='18' height='18'>
-      <use href='./images/sprite.svg#icon-cross'></use>
-    </svg>
-  </button>
+  <button type='button' class='modal__button-close'>&#10006;</button>
   <div class='template__modal-card'>
     <div class='modal-card__poster'>
       {{#if poster_path}}
@@ -49,9 +45,14 @@
         <p class='modal-card__item'>Genre
         </p>
         <p class='modal-card__item--genre-list modal-card__item--span'>
-          {{#each genres}}
-            <span class='modal-card__item--genre-data'>{{this.name}}</span>
-          {{/each}}
+          {{#if genres}}
+            {{#each genres}}
+              <span class='modal-card__item--genre-data'>{{this.name}}{{#unless @last}},
+                {{/unless}}</span>
+            {{/each}}
+          {{else}}
+            <span class='modal-card__item--genre-data'>N/A</span>
+          {{/if}}
         </p>
       </div>
 
