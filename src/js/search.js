@@ -85,9 +85,9 @@ function renderMovie(data, data1) {
   }
   // totalItems = data.total_results; ++++
   //   console.log(totalItems);
-    if (data.page === 1) main.innerHTML = '';
-    const pag = document.querySelector('.tui-pagination');
-    pag.innerHTML = '';
+  if (data.page === 1) main.innerHTML = '';
+  const pag = document.querySelector('.tui-pagination');
+  pag.innerHTML = '';
   if (data.page <= data.total_pages) {
     main.insertAdjacentHTML('beforeend', cardsTemplate(data.results));
     const genres = data1.genres;
@@ -107,10 +107,13 @@ function renderMovie(data, data1) {
       if (genre.length > 1)
         genre[genre.length - 1].innerHTML = genre[genre.length - 1].innerHTML.slice(0, -1);
     });
-    }
+  }
+  const year = document.querySelectorAll('.card__year');
+  year.forEach(el => {
+    el.innerHTML = el.innerHTML.slice(0, -6);
+  });
 
-
-    window.addEventListener('scroll', handler);
+  window.addEventListener('scroll', handler);
   if (data.total_results === 0) {
     window.removeEventListener('scroll', handler);
   }
@@ -121,7 +124,7 @@ function renderMovie(data, data1) {
 
 function searchMovie(query) {
   fetchMovie(query).then(data => renderMovie(...data));
-//   window.addEventListener('scroll', handler);
+  //   window.addEventListener('scroll', handler);
 }
 
 // function createPaginationForSearch() { +++++++++++++++++++++
