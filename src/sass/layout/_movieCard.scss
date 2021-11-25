@@ -49,6 +49,7 @@
   &__genres {
     display: inline-flex;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   &__genre {
@@ -59,9 +60,11 @@
     margin-right: 5px;
   }
 }
+.card__year {
+  margin-right: 10px;
+}
 
 .card__vote {
-  margin-left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
