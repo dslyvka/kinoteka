@@ -21,3 +21,6 @@ window.pagination.on('beforeMove', event => {
 
 
 
+
+
+

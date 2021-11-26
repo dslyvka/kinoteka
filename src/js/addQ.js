@@ -1,7 +1,9 @@
 const key = '6a2ef13a57616b6abb93fc4394172b01';
-const q = [];
+let q = JSON.parse(localStorage.getItem('q'));
+if (q === null) q = [];
+let myLib = document.querySelector('.collection');
+let markup = '';
 
-import cardTemplateWatched from '../templates/cardsTemplateWatched.hbs';
 // localStorage.setItem('watched', JSON.stringify(watched));
 
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
@@ -15,9 +17,9 @@ export default async function addToQ() {
   let res;
   await fetch(query)
     .then(data => data.json())
-    .then(data => (res = cardTemplateWatched(data)));
-  if (!q.includes(res)) q.unshift(res);
-  console.log(res);
+    .then(data => (res = data));
+  if (!JSON.stringify(q).includes(JSON.stringify(res))) q.unshift(res);
+  console.log('res: ', res);
   console.log(q);
   localStorage.setItem('q', JSON.stringify(q));
 }
