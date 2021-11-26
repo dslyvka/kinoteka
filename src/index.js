@@ -10,6 +10,7 @@ import './js/footer_modal';
 import './js/loader';
 import './js/toTopBtn';
 import './js/onMyLibClick';
+import Swal from 'sweetalert2';
 
 createPagination();
 
@@ -17,10 +18,3 @@ createPagination();
 window.pagination.on('beforeMove', event => {
   renderPopularMovies(event.page);
 });
-
-
-
-
-
-
-
