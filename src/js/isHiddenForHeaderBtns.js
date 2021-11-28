@@ -28,5 +28,5 @@ function onMyLibraryBtnClick() {
   toggleClass(refs.homeBtn, refs.myLibraryBtn, 'current-page');
   refs.header.classList.add('header__myLibrary');
   refs.header.classList.remove('header__bg-home');
-  refs.watchedBtn.classList.add('button__current');
+  // refs.watchedBtn.classList.add('button__current');
 }

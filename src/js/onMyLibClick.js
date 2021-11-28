@@ -15,7 +15,8 @@ myLibBtn.addEventListener('click', () => {
     wqRender(watched);
   } else {
     clear();
-  }
+  };
+  watchedBtn.classList.add('button__current');
 });
 
 watchedBtn.addEventListener('click', () => {
