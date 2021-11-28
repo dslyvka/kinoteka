@@ -2,6 +2,13 @@ import cardsTemplate from '../templates/cardsTemplate.hbs';
 import fetchPopMovies from './fetchPopularMovies';
 import Swal from 'sweetalert2';
 
+const swalCustom = Swal.mixin({
+  customClass: {
+    confirmButton: 'modal-closeButton',
+  },
+  buttonsStyling: false,
+});
+
 window.addEventListener('load', function () {
   renderPopularMovies();
 });
@@ -32,7 +39,7 @@ export async function renderPopularMovies(page = 1) {
       container.insertAdjacentHTML('beforeend', cardsTemplate(movies));
     })
     .catch(error => {
-      Swal.fire({
+      swalCustom.fire({
         title: 'Sorry',
         text: 'Something went wrong',
         icon: 'error',

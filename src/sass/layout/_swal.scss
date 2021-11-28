@@ -1,0 +1,18 @@
+.modal-closeButton {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: #ff6b08;
+  color: #fff;
+  font-size: 1em;
+  margin: 0.3125em;
+  padding: 0.625em 1.1em;
+  transition: box-shadow 0.1s;
+  box-shadow: 0 0 0 3px transparent;
+  font-weight: 500;
+  border-color: #ff6b08;
+}
+
+.modal-closeButton:hover {
+  background-color: #f8802f;
+}

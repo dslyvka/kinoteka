@@ -1,12 +1,20 @@
 // JS модального окна с полной информацией о кинофильме
-
 import movieModalCard from '../templates/movieModalCardTemplate.hbs';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import addToWatched from './watchedMovies';
 import addToQ from './addQ';
+import Swal from 'sweetalert2';
+
+const swalCustom = Swal.mixin({
+  customClass: {
+    confirmButton: 'modal-closeButton',
+  },
+  buttonsStyling: false,
+});
 
 const apiKey = '6a2ef13a57616b6abb93fc4394172b01';
+const BASE_URL = 'https://api.themoviedb.org/3';
 
 const cardMovie = document.querySelector('.collection');
 const background = document.querySelector('.section');
@@ -14,7 +22,7 @@ const background = document.querySelector('.section');
 cardMovie.addEventListener('click', openModal);
 
 function fetchOneMovieInfo(movie_id) {
-  const url = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${apiKey}`;
+  const url = `${BASE_URL}/movie/${movie_id}?api_key=${apiKey}`;
   return fetch(url)
     .then(response => response.json())
     .then(data => ({
@@ -83,6 +91,11 @@ function openModal(e) {
     })
     .then(data => {})
     .catch(error => {
-      console.log();
+      swalCustom.fire({
+        title: 'Sorry',
+        text: 'Something went wrong',
+        icon: 'error',
+        confirmButtonText: 'Close',
+      });
     });
 }
