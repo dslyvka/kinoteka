@@ -1,4 +1,5 @@
 import cardTemplateWatched from '../templates/cardsTemplateWatched.hbs';
+import handler from './search';
 
 const myLibBtn = document.querySelector('.js-button__myLibrary');
 const container = document.querySelector('.collection');
@@ -9,7 +10,7 @@ const queueBtn = document.querySelector('.button__q');
 
 myLibBtn.addEventListener('click', () => {
   const watched = JSON.parse(localStorage.getItem('watched'));
-
+  window.removeEventListener('scroll', handler);
   if (watched != null) {
     clear();
     wqRender(watched);

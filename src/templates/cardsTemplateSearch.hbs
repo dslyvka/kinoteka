@@ -1,21 +1,21 @@
 {{#each this}}
 <li class="collection__item">
-    <article class="card">
+    <article class="card" data-id="{{id}}">
           {{#if poster_path}}
           <img class="card__img" src="https://www.themoviedb.org/t/p/w500{{poster_path}}"
             onerror="this.onerror=null;this.src='https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg' loading="
-            lazy" alt="{{title}}" title="{{title}}" data-id="{{id}}" />
+            lazy" alt="{{title}}" title="{{title}}" />
         {{else}}
         <img class="card__img"
             src="https://m.media-amazon.com/images/I/61nt34iuBkL._SS500_.jpg" loading="lazy"
-            alt="{{title}}" title="{{title}}" data-id="{{id}}" />
+            alt="{{title}}" title="{{title}}" />
         {{/if}}
         <div class="card__wrap">
         {{#if original_title}}
         <h2 class='card__title'>{{original_title}}</h2>
         {{/if}}
         {{#if name}}
-        <h2 class="card__title" data-id="{{id}}">{{name}}</h2>
+        <h2 class="card__title">{{name}}</h2>
         {{/if}}
             <div class="card__info">
                 <ul class="card__genres">

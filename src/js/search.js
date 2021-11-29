@@ -8,13 +8,12 @@ const search = document.querySelector('.form__input');
 const searchBtn = document.querySelector('.button__submit');
 const onError = document.querySelector('.label');
 
-// const ITEMS_PER_PAGE_HOME = 20; +
 
 let key;
 let searchValue = '';
 let query;
 const handler = throttle(infinityScroll, 100);
-// let totalItems; +
+
 
 search.addEventListener('input', debounce(onSearch, 50));
 search.addEventListener('keydown', onEnter);
@@ -28,17 +27,6 @@ https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${
 }
 
 async function fetchMovie(query) {
-  await Promise.all([
-    fetch(query)
-      .then(data => data.json())
-      .then(console.log),
-    fetch(
-      'https://api.themoviedb.org/3/genre/movie/list?api_key=6a2ef13a57616b6abb93fc4394172b01&language=en-US',
-    )
-      .then(data => data.json())
-      .then(console.log),
-  ]);
-  //   .then(data => console.log(data));
 
   return await Promise.all([
     fetch(query).then(data => data.json()),
@@ -46,9 +34,6 @@ async function fetchMovie(query) {
       'https://api.themoviedb.org/3/genre/movie/list?api_key=6a2ef13a57616b6abb93fc4394172b01&language=en-US',
     ).then(data => data.json()),
   ]);
-  // fetch(query).then(data => data.json());
-
-  // .then(console.log);
 }
 
 function onEnter(e) {
@@ -57,17 +42,7 @@ function onEnter(e) {
     if (searchValue.trim() !== '') searchMovie(query);
   }
 
-  //   const container = document.getElementById('tui-pagination-container');
-  //   container.innerHTML = '';
-  //     // let data = fetch(`https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchValue}&page=${1}&include_adult=false`)
-  //   createPagination();
-  //   window.pagination.on('beforeMove', event => {
-  //     query = `
-  // https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchValue}&page=${event.page}&include_adult=false`;
-  //     searchMovie(query);
-  //     //   console.log(currentPage);
-  //     //   window.pagination.reset(totalItems);
-  //   }); +++++++++++++++++++++++++++++++++
+
 }
 
 function onBtnSearch(e) {
@@ -83,8 +58,7 @@ function renderMovie(data, data1) {
     }, 2000);
     return;
   }
-  // totalItems = data.total_results; ++++
-  //   console.log(totalItems);
+
   if (data.page === 1) main.innerHTML = '';
   const pag = document.querySelector('.tui-pagination');
   pag.innerHTML = '';
@@ -95,7 +69,6 @@ function renderMovie(data, data1) {
     genres1.forEach(el => {
       if (
         genres.forEach(genre => {
-          // console.log(genre.id, genre.name, el.textContent);
           if (genre.id == parseInt(el.textContent)) el.textContent = genre.name + ',';
         })
       );
@@ -124,38 +97,11 @@ function renderMovie(data, data1) {
 
 function searchMovie(query) {
   fetchMovie(query).then(data => renderMovie(...data));
-  //   window.addEventListener('scroll', handler);
+
 }
 
-// function createPaginationForSearch() { +++++++++++++++++++++
-//   const options = {
-//     itemsPerPage: 0,
-//     visiblePages: 0,
-//     page: 1,
-//     totalItems: 0,
-//     centerAlign: true,
-//     firstItemClassName: 'tui-first-child',
-//     lastItemClassName: 'tui-last-child',
-//     usageStatistics: false,
-//   };
-//   const container = document.getElementById('tui-pagination-container');
-//   window.pagination = new Pagination(container, options);
-// }
-
-// // function totalItems() {
-// //     return fetch(query)
-// //         .then(data => data.json());
-// //   // console.log(a);
-// // }
 let page = 2;
 
-// while () {
-// }
-// while (true) {
-
-// }
-
-// window.addEventListener('scroll', handler);
 
 function infinityScroll() {
   if (searchValue.trim() !== '') {
@@ -168,3 +114,5 @@ function infinityScroll() {
     }
   }
 }
+
+export default handler;
