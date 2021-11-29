@@ -6,7 +6,7 @@ import './js/onHomeRendering';
 import './js/movieModalCard';
 import './js/search';
 import './js/isHiddenForHeaderBtns';
-import './js/footer_modal';
+import './js/footerModal';
 import './js/loader';
 import './js/toTopBtn';
 import './js/onMyLibClick';
