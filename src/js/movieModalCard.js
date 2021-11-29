@@ -33,11 +33,8 @@ function fetchOneMovieInfo(movie_id) {
 
 function openModal(e) {
   e.preventDefault();
-
-  fetchOneMovieInfo(e.target.dataset.id)
+  fetchOneMovieInfo(e.target.closest('article').dataset.id)
     .then(async data => {
-      if (e.target.nodeName !== 'IMG') return;
-
       const markup = movieModalCard(data);
       const modal = basicLightbox.create(markup);
 
