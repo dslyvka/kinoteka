@@ -26,9 +26,9 @@ function onSearch(e) {
 https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${searchValue}&page=${1}&include_adult=false`;
 }
 
-async function fetchMovie(query) {
+function fetchMovie(query) {
 
-  return await Promise.all([
+  return Promise.all([
     fetch(query).then(data => data.json()),
     fetch(
       'https://api.themoviedb.org/3/genre/movie/list?api_key=6a2ef13a57616b6abb93fc4394172b01&language=en-US',
