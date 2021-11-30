@@ -17,7 +17,6 @@ const apiKey = '6a2ef13a57616b6abb93fc4394172b01';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 const cardMovie = document.querySelector('.collection');
-const background = document.querySelector('.section');
 
 cardMovie.addEventListener('click', openModal);
 
@@ -33,6 +32,7 @@ function fetchOneMovieInfo(movie_id) {
 
 function openModal(e) {
   e.preventDefault();
+
   fetchOneMovieInfo(e.target.closest('article').dataset.id)
     .then(async data => {
       const markup = movieModalCard(data);
@@ -46,29 +46,14 @@ function openModal(e) {
       const q = document.querySelector('.js-addQueue');
       q.addEventListener('click', addToQ);
 
-      background.classList.add('nosroll');
-
       const closeButton = document.querySelector('.modal__button-close');
 
       closeButton.addEventListener('click', closeModal);
-      background.addEventListener('click', closeModalUnderlay);
       window.addEventListener('keydown', closeModalHandler);
 
       function closeModal(e) {
         modal.close(e);
-        background.classList.remove('nosroll');
         closeButton.removeEventListener('click', closeModal);
-        background.removeEventListener('click', closeModalUnderlay);
-        window.removeEventListener('keydown', closeModalHandler);
-        watched.removeEventListener('click', addToWatched);
-        q.removeEventListener('click', addToQ);
-      }
-
-      function closeModalUnderlay(e) {
-        modal.close(e);
-        background.classList.remove('nosroll');
-        closeButton.removeEventListener('click', closeModal);
-        background.removeEventListener('click', closeModalUnderlay);
         window.removeEventListener('keydown', closeModalHandler);
         watched.removeEventListener('click', addToWatched);
         q.removeEventListener('click', addToQ);
@@ -77,12 +62,7 @@ function openModal(e) {
       function closeModalHandler(e) {
         if (e.code === 'Escape') {
           modal.close(e);
-          background.classList.remove('nosroll');
-          closeButton.removeEventListener('click', closeModal);
-          background.removeEventListener('click', closeModalUnderlay);
-          window.removeEventListener('keydown', closeModalHandler);
-          watched.removeEventListener('click', addToWatched);
-          q.removeEventListener('click', addToQ);
+          closeModal();
         }
       }
     })
