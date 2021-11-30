@@ -54,7 +54,7 @@
 .modal_footer__title {
   color: $color-accent;
   font-size: 34px;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 10px;
   text-align: center;
 }
@@ -62,23 +62,11 @@
   color: $secondary-text-color;
   font-size: 18px;
   text-align: center;
-}
-.modal_footer_names--details {
-  text-decoration: underline;
-  font-size: 20px;
-  color: $color-accent;
+  padding-top: 20px;
+  line-height: 1.5;
 }
 .modal_footer__icon {
   position: absolute;
   bottom: 3px;
   left: 150px;
-}
-.modal_footer__title--develop {
-  text-decoration: underline;
-  font-size: 20px;
-  color: $color-accent;
-  text-align: center;
-  text-transform: none;
-  font-weight: 500;
-  margin-top: 10px;
 }
