@@ -19,7 +19,5 @@ export default async function addToQ() {
     .then(data => data.json())
     .then(data => (res = data));
   if (!JSON.stringify(q).includes(JSON.stringify(res))) q.unshift(res);
-  console.log('res: ', res);
-  console.log(q);
   localStorage.setItem('q', JSON.stringify(q));
 }

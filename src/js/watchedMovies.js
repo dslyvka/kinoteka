@@ -4,15 +4,13 @@ if (watched === null) watched = [];
 
 // Слушатель по клику на кнопку добавляет фильм в массив объектов
 
-export default function addToWatched() {
+export default async function addToWatched() {
   const movie = document.querySelector('.modal-card__img');
   const id = movie.dataset.id;
     const query = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}&language=en-US`;
     let res;
-    fetch(query).then(data => data.json()).then(data => res = data);
+    await fetch(query).then(data => data.json()).then(data => res = data);
     if (!JSON.stringify(watched).includes(JSON.stringify(res))) watched.unshift(res);
-    console.log('res: ', res);
-    console.log(watched);
     localStorage.setItem('watched', JSON.stringify(watched));
 }
 
